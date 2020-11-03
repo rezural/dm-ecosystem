@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+BASE_URL="https://github.com/dimforge"
+REPOS="nalgebra ncollide simba rapier salva"
+for REPO in $REPOS
+do
+    REPO_URL=$BASE_URL/$REPO
+    git clone $REPO_URL
+done
+
+for REPO in $REPOS
+do
+    $(cd $REPO; cargo build; cargo build --release)
+done
