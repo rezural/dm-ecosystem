@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+BASE_URL="https://github.com/dimforge"
+REPOS="nalgebra ncollide simba rapier salva"
+for REPO in $REPOS
+do
+    $(cd $REPO; cargo clean)
+done
