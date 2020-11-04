@@ -5,10 +5,10 @@ REPOS="nalgebra ncollide simba rapier salva"
 for REPO in $REPOS
 do
     REPO_URL=$BASE_URL/$REPO
-    git clone $REPO_URL
+    [ -d $REPO ] || git clone $REPO_URL
 done
 
 for REPO in $REPOS
 do
-    $(cd $REPO; cargo build; cargo build --release)
+    $(cd $REPO; cargo clean; cargo build; cargo build --release)
 done
