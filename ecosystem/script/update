@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+REPOS="nalgebra ncollide simba rapier salva"
+for REPO in $REPOS
+do
+    echo "Updating ${REPO}"
+    git -C $REPO checkout master
+    git -C $REPO pull 
+done

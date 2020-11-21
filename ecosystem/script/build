@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+REPOS="nalgebra ncollide simba rapier salva"
+for REPO in $REPOS
+do
+    $(cd $REPO; cargo clean; cargo build; cargo build --release)
+done
