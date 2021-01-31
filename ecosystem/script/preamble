@@ -1,0 +1,6 @@
+export WD=$(pwd)
+export SCRIPT="${0}"
+export SCRIPT_DIR=$(dirname $WD/$SCRIPT);
+
+BASE_URL="https://github.com/dimforge"
+REPOS=$(cat $SCRIPT_DIR/repos)

@@ -1,14 +1,5 @@
 #!/usr/bin/env sh
+. "$(dirname ${0})/preamble"
 
-BASE_URL="https://github.com/dimforge"
-REPOS="nalgebra ncollide nphysics simba rapier salva"
-for REPO in $REPOS
-do
-    REPO_URL=$BASE_URL/$REPO
-    [ -d $REPO ] || git clone $REPO_URL
-done
-
-for REPO in $REPOS
-do
-    $(cd $REPO; cargo clean; cargo build; cargo build --release)
-done
+. $SCRIPT_DIR/clone
+. $SCRIPT_DIR/build

@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-REPOS="nalgebra ncollide simba rapier salva"
+. "$(dirname ${0})/preamble"
+
 for REPO in $REPOS
 do
     $(cd $REPO; cargo clean; cargo build; cargo build --release)
